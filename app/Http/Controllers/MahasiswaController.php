@@ -15,6 +15,7 @@ class MahasiswaController extends Controller
         $mahasiswa = Mahasiswa::all();
         
         return view('mahasiswa', [
+            'title' => 'Mahasiswa',
             'mahasiswa' => $mahasiswa,
         ]);
     }

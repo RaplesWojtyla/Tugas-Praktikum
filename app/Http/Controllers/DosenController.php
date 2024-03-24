@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
 use Illuminate\Http\Request;
 
 class DosenController extends Controller
@@ -11,7 +12,12 @@ class DosenController extends Controller
      */
     public function index()
     {
-        return view('dosen');
+        $lecturers = Dosen::all();
+
+        return view('dosen', [
+            'title' => 'Dosen',
+            'lecturers' => $lecturers,
+        ]);
     }
 
     /**
