@@ -17,11 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome',[
+    return view('welcome', [
         'title' => 'Praktikum PWL',
-        'isi_data' => 'Halaman Awal'
+        'isi_data' => 'Halaman Awal - Patra Rafles Wostyla Sinaga - 231402052'
     ]);
 });
 Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
 Route::get('/dosen', [DosenController::class, 'index']);
-

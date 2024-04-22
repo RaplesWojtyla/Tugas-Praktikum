@@ -9,11 +9,13 @@ class Dosen extends Model
 {
     use HasFactory;
     protected $table = 'dosen';
-    protected $primaryKey = 'id_dosen';
-    public $timeStamps = false;
+    protected $primaryKey = 'nip';
+    public $timestamps = false;
+
+    protected $fillable = ['nama', 'nip', 'email'];
 
     public function ktd()
     {
-        return $this->hasOne(Ktd::class, 'id_dosen');
+        return $this->hasOne(Ktd::class, 'nip');
     }
 }
