@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreateController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\MahasiswaController;
 
@@ -22,5 +23,9 @@ Route::get('/', function () {
         'isi_data' => 'Halaman Awal - Patra Rafles Wostyla Sinaga - 231402052'
     ]);
 });
-Route::get('/mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('index');
+Route::get('mahasiswa/create', [MahasiswaController::class, 'create'])->name('create');
+Route::post('mahasiswa/store', [MahasiswaController::class, 'store'])->name('store');
+
 Route::get('/dosen', [DosenController::class, 'index']);
+Route::get('/create', [DosenController::class, 'create']);

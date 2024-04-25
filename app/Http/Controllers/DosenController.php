@@ -25,7 +25,9 @@ class DosenController extends Controller
      */
     public function create()
     {
-        //
+        return view('create', [
+            'title' => 'Create',
+        ]);
     }
 
     /**
