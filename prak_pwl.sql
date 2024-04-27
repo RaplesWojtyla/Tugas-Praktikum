@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2024 at 09:54 PM
+-- Generation Time: Apr 27, 2024 at 08:43 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,18 +39,12 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`id_dosen`, `nama`, `nip`, `email`) VALUES
-(1, 'Dr. Skyla Orn', '009286938374063510', 'nkrajcik@example.com'),
-(2, 'Mayra Mohr', '978943385676292995', 'keebler.jerry@example.net'),
-(3, 'Lon Zieme', '943570701627868262', 'eeichmann@example.com'),
-(4, 'Yadira Schamberger', '599148030558189622', 'stamm.clyde@example.net'),
-(5, 'Prof. Trystan Harber Jr.', '714768797069068652', 'sveum@example.org'),
-(6, 'Kenton Roberts V', '728884012679291395', 'xzavier36@example.net'),
-(7, 'Mathias Morissette', '288941756334540495', 'nikolaus.taylor@example.net'),
-(8, 'Edwin Renner III', '046062968060186625', 'wilhelmine90@example.org'),
-(9, 'Rhiannon Altenwerth III', '877905142939511223', 'gleason.monty@example.com'),
-(10, 'Timmy Dickens', '114602835729167597', 'ojacobi@example.org'),
-(11, 'Dr. Finn Spinka DDS', '780841948406490424', 'cecil72@example.com'),
-(12, 'Miss Ardella Abernathy DDS', '619283145714924828', 'tkovacek@example.org');
+(1, 'Teagan Stoltenberg', '215809059156675119', 'powlowski.deborah@example.org'),
+(2, 'Maye Wisozk', '661945206900877706', 'runte.michele@example.org'),
+(3, 'Prof. Jonas Mann', '286887614712722116', 'tremblay.camylle@example.net'),
+(4, 'Dr. Antonia Keeling V', '702706961192807377', 'edenesik@example.com'),
+(5, 'Brianne Ferry', '437247972069308310', 'brown.trisha@example.com'),
+(6, 'Gordon Mertz', '515927184719984508', 'tyreek.lehner@example.net');
 
 -- --------------------------------------------------------
 
@@ -69,18 +63,12 @@ CREATE TABLE `ktd` (
 --
 
 INSERT INTO `ktd` (`id_ktd`, `nip`, `nidn`) VALUES
-(1, '599148030558189622', '2359961027'),
-(2, '877905142939511223', '6863563972'),
-(3, '728884012679291395', '2233013857'),
-(4, '288941756334540495', '9353476625'),
-(5, '619283145714924828', '3241031038'),
-(6, '780841948406490424', '7049928803'),
-(7, '046062968060186625', '8001255576'),
-(8, '114602835729167597', '1403034016'),
-(9, '943570701627868262', '8918721097'),
-(10, '714768797069068652', '1384083379'),
-(11, '009286938374063510', '5867024794'),
-(12, '978943385676292995', '7281763313');
+(1, '661945206900877706', '0036942216'),
+(2, '215809059156675119', '0299304649'),
+(3, '702706961192807377', '0727784364'),
+(4, '515927184719984508', '6622218721'),
+(5, '437247972069308310', '9818796723'),
+(6, '286887614712722116', '5276504956');
 
 -- --------------------------------------------------------
 
@@ -90,7 +78,7 @@ INSERT INTO `ktd` (`id_ktd`, `nip`, `nidn`) VALUES
 
 CREATE TABLE `ktm` (
   `id_ktm` bigint(20) UNSIGNED NOT NULL,
-  `nim` varchar(9) NOT NULL,
+  `id_mahasiswa` bigint(20) UNSIGNED NOT NULL,
   `nomor_identitas` varchar(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -98,13 +86,15 @@ CREATE TABLE `ktm` (
 -- Dumping data for table `ktm`
 --
 
-INSERT INTO `ktm` (`id_ktm`, `nim`, `nomor_identitas`) VALUES
-(1, '388709127', 'KTM51694'),
-(2, '688898993', 'KTM00299'),
-(3, '145223102', 'KTM60625'),
-(4, '171345699', 'KTM41877'),
-(5, '612537142', 'KTM54068'),
-(6, '291094654', 'KTM85267');
+INSERT INTO `ktm` (`id_ktm`, `id_mahasiswa`, `nomor_identitas`) VALUES
+(1, 4, 'KTM86535'),
+(2, 5, 'KTM90290'),
+(3, 2, 'KTM07631'),
+(4, 3, 'KTM02671'),
+(5, 1, 'KTM67334'),
+(6, 6, 'KTM79694'),
+(7, 7, 'KTM0052'),
+(8, 8, 'KTM00128');
 
 -- --------------------------------------------------------
 
@@ -125,12 +115,14 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `jurusan`, `alamat`) VALUES
-(1, '612537142', 'Hoyt Wilkinson', 'Teknologi Informasi', '429 Crooks Tunnel\nFeilchester, MT 02677-7498'),
-(2, '388709127', 'Anjali Walker', 'Teknologi Informasi', '6412 Maureen Island Suite 140\nJaronport, MO 06350'),
-(3, '688898993', 'Abbey Rowe', 'Teknologi Informasi', '3502 Carol Keys Suite 003\nDomenicstad, DC 60748-6316'),
-(4, '291094654', 'Dariana Stehr', 'Teknologi Informasi', '9845 Reichel Fords\nPort Gerard, NM 73499-5954'),
-(5, '171345699', 'Wallace Runolfsdottir', 'Teknologi Informasi', '9969 Thompson Spring Suite 607\nNew Shyanne, IN 88174-2875'),
-(6, '145223102', 'Curt Bahringer', 'Teknologi Informasi', '6551 Randall Roads\nWilkinsonville, UT 65338-3844');
+(1, '443433065', 'Beatrice Larsonn', 'Teknologi Informasi', '849 Klocko Coves Suite 556South Lottie, IL 05172-7815'),
+(2, '272014908', 'Felton Wisozk', 'Teknologi Informasi', '138 Russel Plains Suite 382\nLake Vivian, HI 63146-5650'),
+(3, '606093812', 'Miss Kiera Stokes', 'Teknologi Informasi', '651 Peyton UnionLaishaview, NH 14058'),
+(4, '638062218', 'Gianni Doyle', 'Teknologi Informasi', '8181 Mara CliffsAdonismouth, MO 95835'),
+(5, '321279072', 'Prof. Ana Abernathy PhD', 'Teknologi Informasi', '2160 Beahan Mission\nKennithview, AR 73747-0976'),
+(6, '156003170', 'Kaleigh Conn', 'Teknologi Informasi', '18089 Sandrine Orchard Suite 181\nUllrichburgh, OR 55103'),
+(7, '231402052', 'Patra Rafles Wostyla Sinaga', 'TI', 'Medan'),
+(8, '231402128', 'Paskal Gay', 'TI', 'Medan');
 
 -- --------------------------------------------------------
 
@@ -149,12 +141,12 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(97, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(98, '2024_04_18_043902_create_staff_table', 1),
-(99, '2024_04_22_172210_create_mahasiswa_table', 1),
-(100, '2024_04_22_174009_create_ktm_table', 1),
-(101, '2024_04_22_191220_create_dosen_table', 1),
-(102, '2024_04_22_191616_create_ktd_table', 1);
+(270, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(271, '2024_04_18_043902_create_staff_table', 1),
+(272, '2024_04_22_172210_create_mahasiswa_table', 1),
+(273, '2024_04_22_174009_create_ktm_table', 1),
+(274, '2024_04_22_191220_create_dosen_table', 1),
+(275, '2024_04_22_191616_create_ktd_table', 1);
 
 -- --------------------------------------------------------
 
@@ -195,14 +187,14 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`id`, `nip`, `email`, `nama`, `tanggal_lahir`, `no_hp`) VALUES
-(1, '1817547499', 'ohowell@example.com', 'Jaydon Cartwright', '1996-01-20', '660.579.4889'),
-(2, '8986853600', 'laney76@example.com', 'Kevon D\'Amore', '1978-07-15', '+1-636-306-6559'),
-(3, '4794540831', 'madelynn89@example.com', 'Rasheed Gerlach', '1992-03-08', '+17379190841'),
-(4, '9540900960', 'samson12@example.org', 'Justine Hettinger', '1985-12-29', '248.282.1123'),
-(5, '1680011641', 'jailyn.braun@example.org', 'Julia Erdman', '2006-08-23', '+1 (220) 592-5279'),
-(6, '4843578064', 'gutkowski.hailee@example.com', 'Jerrell Green', '2017-08-20', '(332) 631-0390'),
-(7, '9203016974', 'annabelle91@example.com', 'Autumn Runolfsdottir I', '1996-01-24', '(425) 605-5817'),
-(8, '8984708094', 'runolfsdottir.keith@example.org', 'Prof. Ottis Brakus MD', '2009-06-18', '253.914.1679');
+(1, '2211731482', 'king.marcelino@example.com', 'Nolan Farrell I', '2015-10-13', '+1 (352) 554-2050'),
+(2, '0384476113', 'heathcote.glenna@example.com', 'Bo Beier', '2018-08-27', '1-208-921-2603'),
+(3, '4101686784', 'tgoyette@example.net', 'Meta Kerluke', '1988-07-11', '859.612.0820'),
+(4, '7796474390', 'anibal03@example.net', 'Prof. Abdul Nikolaus PhD', '1997-08-18', '(234) 239-9391'),
+(5, '7790483658', 'rutherford.ernest@example.com', 'Mr. Hershel Frami Sr.', '1991-09-17', '(530) 457-6455'),
+(6, '0232379648', 'pollich.aracely@example.com', 'Dr. Maureen Bogan MD', '1971-04-08', '+1 (607) 208-2300'),
+(7, '5417640757', 'christian29@example.com', 'Rosalee Bauch DVM', '2019-03-19', '813.458.0759'),
+(8, '7984763322', 'scrist@example.com', 'Miss Ruthe McCullough I', '1987-04-21', '1-878-291-8818');
 
 --
 -- Indexes for dumped tables
@@ -229,8 +221,8 @@ ALTER TABLE `ktd`
 --
 ALTER TABLE `ktm`
   ADD PRIMARY KEY (`id_ktm`),
-  ADD UNIQUE KEY `ktm_nim_unique` (`nim`),
-  ADD UNIQUE KEY `ktm_nomor_identitas_unique` (`nomor_identitas`);
+  ADD UNIQUE KEY `ktm_nomor_identitas_unique` (`nomor_identitas`),
+  ADD KEY `ktm_id_mahasiswa_foreign` (`id_mahasiswa`);
 
 --
 -- Indexes for table `mahasiswa`
@@ -269,31 +261,31 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `dosen`
 --
 ALTER TABLE `dosen`
-  MODIFY `id_dosen` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_dosen` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ktd`
 --
 ALTER TABLE `ktd`
-  MODIFY `id_ktd` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_ktd` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ktm`
 --
 ALTER TABLE `ktm`
-  MODIFY `id_ktm` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_ktm` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id_mahasiswa` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_mahasiswa` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=276;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -321,7 +313,7 @@ ALTER TABLE `ktd`
 -- Constraints for table `ktm`
 --
 ALTER TABLE `ktm`
-  ADD CONSTRAINT `ktm_nim_foreign` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
+  ADD CONSTRAINT `ktm_id_mahasiswa_foreign` FOREIGN KEY (`id_mahasiswa`) REFERENCES `mahasiswa` (`id_mahasiswa`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
