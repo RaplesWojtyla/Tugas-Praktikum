@@ -42,9 +42,6 @@ class MahasiswaController extends Controller
             'no_identitas' => 'required'
         ]);
 
-        $ktm = new Ktm;
-        $ktm->nim = $request->nim;
-        $ktm->nomor_identitas = $request->no_identitas;
         
         $mahasiswa = new Mahasiswa;
         $mahasiswa->nama = $request->nama;
@@ -52,7 +49,12 @@ class MahasiswaController extends Controller
         $mahasiswa->jurusan = $request->jurusan;
         $mahasiswa->alamat = $request->alamat;
         $mahasiswa->save();
+        
+        $ktm = new Ktm;
+        $ktm->id_mahasiswa = $mahasiswa->id_mahasiswa;
+        $ktm->nomor_identitas = $request->no_identitas;
         $ktm->save();
+
         return redirect()->route('index');
     }
 
@@ -67,17 +69,42 @@ class MahasiswaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $id_mahasiswa)
     {
-        //
+        $mahasiswa = Mahasiswa::find($id_mahasiswa);
+
+        return view('update', [
+            'mahasiswa' => $mahasiswa
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id_mahasiswa)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'nim' => 'required',
+            'jurusan' => 'required',    
+            'alamat' => 'required',
+            'no_identitas' => 'required'
+        ]);
+
+        $mahasiswa = Mahasiswa::find($id_mahasiswa);
+        $ktm = Ktm::find($request->id_ktm);
+        
+        $mahasiswa->nama = $request->nama;
+        $mahasiswa->nim = $request->nim;
+        $mahasiswa->jurusan = $request->jurusan;
+        $mahasiswa->alamat = $request->alamat;
+        
+        $ktm->nomor_identitas = $request->no_identitas;
+        
+        $mahasiswa->save();
+        $ktm->save();
+
+        return redirect()->route('index');
     }
 
     /**

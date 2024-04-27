@@ -13,6 +13,6 @@ class KtdSeeder extends Seeder
      */
     public function run(): void
     {
-        Ktd::factory(12)->create();
+        Ktd::factory(6)->create();
     }
 }

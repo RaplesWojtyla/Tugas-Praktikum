@@ -21,10 +21,10 @@ class KtmFactory extends Factory
     
     public function definition(): array
     {
-        $mahasiswa_nim = Mahasiswa::all()->pluck('nim')->toArray();
+        $mahasiswa_id = Mahasiswa::all()->pluck('id_mahasiswa')->toArray();
         
         return [
-            'nim' => $this->faker->unique()->randomElement($mahasiswa_nim),
+            'id_mahasiswa' => $this->faker->unique()->randomElement($mahasiswa_id),
             'nomor_identitas' => $this->faker->unique()->numerify('KTM#####'),
         ];
     }

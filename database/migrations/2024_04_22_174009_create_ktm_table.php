@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('ktm', function (Blueprint $table)
         {
             $table->id('id_ktm');
-            $table->string('nim', 9)->unique();
+            $table->foreignId('id_mahasiswa');
             $table->string('nomor_identitas', 8)->unique();
 
-            $table->foreign('nim')->references('nim')->on('mahasiswa');
+            $table->foreign('id_mahasiswa')->references('id_mahasiswa')->on('mahasiswa');
         });
     }
 

@@ -28,7 +28,7 @@
                 <td>{{$mhs->alamat}}</td>
                 <td>{{$mhs->ktm->nomor_identitas}}</td> 
                 <td>
-                    <button type="button" class="btn btn-primary">Update</button>
+                    <a href="{{ route('edit', $mhs->id_mahasiswa) }}"><button type="button" class="btn btn-primary">Update</button></a>
                     <button type="button" class="btn btn-danger">Hapus</button>
                 </td>
               </tr>
