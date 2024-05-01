@@ -29,7 +29,7 @@
                 <td>{{$mhs->ktm->nomor_identitas}}</td> 
                 <td>
                     <a href="{{ route('edit', $mhs->id_mahasiswa) }}"><button type="button" class="btn btn-primary">Update</button></a>
-                    <button type="button" class="btn btn-danger">Hapus</button>
+                    <a href="{{ route('destroy', $mhs->ktm->id_ktm)}}"><button type="button" class="btn btn-danger">Hapus</button></a>
                 </td>
               </tr>
               @endforeach

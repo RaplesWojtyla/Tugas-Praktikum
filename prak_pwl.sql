@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2024 at 08:43 PM
+-- Generation Time: May 01, 2024 at 10:10 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -89,9 +89,7 @@ CREATE TABLE `ktm` (
 INSERT INTO `ktm` (`id_ktm`, `id_mahasiswa`, `nomor_identitas`) VALUES
 (1, 4, 'KTM86535'),
 (2, 5, 'KTM90290'),
-(3, 2, 'KTM07631'),
 (4, 3, 'KTM02671'),
-(5, 1, 'KTM67334'),
 (6, 6, 'KTM79694'),
 (7, 7, 'KTM0052'),
 (8, 8, 'KTM00128');
@@ -115,8 +113,6 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_mahasiswa`, `nim`, `nama`, `jurusan`, `alamat`) VALUES
-(1, '443433065', 'Beatrice Larsonn', 'Teknologi Informasi', '849 Klocko Coves Suite 556South Lottie, IL 05172-7815'),
-(2, '272014908', 'Felton Wisozk', 'Teknologi Informasi', '138 Russel Plains Suite 382\nLake Vivian, HI 63146-5650'),
 (3, '606093812', 'Miss Kiera Stokes', 'Teknologi Informasi', '651 Peyton UnionLaishaview, NH 14058'),
 (4, '638062218', 'Gianni Doyle', 'Teknologi Informasi', '8181 Mara CliffsAdonismouth, MO 95835'),
 (5, '321279072', 'Prof. Ana Abernathy PhD', 'Teknologi Informasi', '2160 Beahan Mission\nKennithview, AR 73747-0976'),
